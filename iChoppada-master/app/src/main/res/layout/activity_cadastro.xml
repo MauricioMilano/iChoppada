@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cadastro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.julia.login.cadastro">
+
+    <TextView
+        android:text="Cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/textCadastro"
+        android:fontFamily="sans"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="60dp"
+        android:textColor="#7A6896"
+        />
+
+
+    <TextView
+        android:text="Nome:"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nomeTxt"
+        android:layout_below="@+id/textCadastro"
+        android:layout_alignLeft="@+id/textCadastro"
+        android:layout_alignStart="@+id/textCadastro" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/nomeEnt"
+        android:layout_below="@+id/nomeTxt"
+        android:layout_alignLeft="@+id/textCadastro"
+        android:layout_alignStart="@+id/textCadastro"
+        android:layout_marginTop="10dp"
+        android:layout_alignRight="@+id/textCadastro"
+        android:layout_alignEnd="@+id/textCadastro" />
+
+    <TextView
+        android:text="Email:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailTxt"
+        android:layout_below="@+id/nomeEnt"
+        android:layout_alignLeft="@+id/textCadastro"
+        android:layout_alignStart="@+id/textCadastro"
+        android:layout_marginTop="15dp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:id="@+id/emailEnt"
+        android:layout_below="@+id/emailTxt"
+        android:layout_alignLeft="@+id/textCadastro"
+        android:layout_alignStart="@+id/textCadastro"
+        android:layout_alignRight="@+id/textCadastro"
+        android:layout_alignEnd="@+id/nomeEnt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senha:"
+        android:layout_below="@+id/emailEnt"
+        android:layout_alignLeft="@+id/textCadastro"
+        android:layout_alignStart="@+id/textCadastro"
+        android:layout_marginTop="15dp"
+        android:id="@+id/senhaTxt" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/senhaTxt"
+        android:layout_alignLeft="@+id/textCadastro"
+        android:layout_alignStart="@+id/textCadastro"
+        android:layout_marginTop="10dp"
+        android:id="@+id/senhaEnt"
+        android:layout_alignRight="@+id/emailEnt"
+        android:layout_alignEnd="@+id/emailEnt" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:id="@+id/repsenhaEnt"
+        android:layout_below="@+id/repsenhaExt"
+        android:layout_alignLeft="@+id/textCadastro"
+        android:layout_alignStart="@+id/textCadastro"
+        android:layout_alignRight="@+id/textCadastro"
+        android:layout_alignEnd="@+id/textCadastro" />
+    <TextView
+        android:text="Repetir Senha:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/senhaEnt"
+        android:layout_alignLeft="@+id/repsenhaEnt"
+        android:layout_alignStart="@+id/repsenhaEnt"
+        android:layout_marginTop="15dp"
+        android:id="@+id/repsenhaExt" />
+
+    <Button
+        android:id="@+id/entrar"
+
+        android:text="Cadastrar"
+        android:typeface="sans"
+
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:textSize="20dp"
+        android:layout_below="@+id/repsenhaEnt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"
+        />
+
+
+</RelativeLayout>

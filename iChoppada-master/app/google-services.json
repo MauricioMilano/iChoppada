@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "368882438679",
+    "firebase_url": "https://ichoppada-a2053.firebaseio.com",
+    "project_id": "ichoppada-a2053",
+    "storage_bucket": "ichoppada-a2053.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368882438679:android:8e6547dc2b44dc34",
+        "android_client_info": {
+          "package_name": "com.example.julia.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368882438679-j98vahu8ss0208snqj3l38ni0g0drt2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXzP_cNWigHvY_ZE2gehXEFDP4tOlY4D8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
