@@ -8,10 +8,14 @@ import android.os.Bundle;
 //pq n teria pra login) então, se Deus quiser, não vai ser tão difícil de se fazer.
 //Se Deus quiser.
 public class Login extends AppCompatActivity {
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+
     }
+
 }
