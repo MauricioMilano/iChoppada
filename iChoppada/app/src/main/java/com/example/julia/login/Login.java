@@ -56,9 +56,9 @@ public class Login extends AppCompatActivity {
             }
         };
         enviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if ((email.getText().toString()).isEmpty() || (senha.getText().toString()).isEmpty()) {
+                    @Override
+                    public void onClick(View v) {
+                        if ((email.getText().toString()).isEmpty() || (senha.getText().toString()).isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Por favor, digite o nome e a senha corretamente",
                             Toast.LENGTH_SHORT).show();
                 } else {

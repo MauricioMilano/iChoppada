@@ -42,31 +42,26 @@ public class adicionarChoppada extends AppCompatActivity {
                 //Adiciona novos valores ao banco de dados, sem sobreescrever.
                 //PRECISO ACHAR UMA MANEIRA DE MOSTRAR ESSES VALORES
                 //PQ ESSA PORRA NAO FUNCIONA DEUS????!!!!!
-                /**
-                 * String key = refDB.child("choppadas").push().getKey()
-                 * Map<String, Object> choppValues = choppada.toMap();
+                /*
+                  String key = refDB.child("choppadas").push().getKey();
+                  Choppada chop = new Choppada(nome,local);
+                  Map<String, Object> choppValues = chop.toMap();
                     Map<String, Object> updates = new HashMap<String, Object>();
                     updates.put("/choppadas/"+key,choppValues);
                     refDB.updateChildren(updates);
-                 */
+                */
 
                 //Subscreve todos os dados de um nó do banco de dados com o valor passado em setValue.
                 //Mas funciona hehehehehhehehehehehehehheheheheheheehh
                 Choppada choppada = new Choppada(nome,local);
                 choppada.setNome(nome);choppada.setLocal(local);//Não sei pq eu escrevi isso mas funcionou
                 refDB.setValue(choppada);
-                screenChoppadas();
+
+                finish();// termina a activity e desempilha
+
             }
         });
     }
-
-        //Redireciona para a tela que mostra todas as choppadas.
-    public void screenChoppadas(){
-        Intent choppadas = new Intent(this, mostrarChoppadas.class);
-        startActivity(choppadas);
-    }
-
-
 
 
 }
