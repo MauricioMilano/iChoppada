@@ -1,11 +1,9 @@
 package com.example.julia.login;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 //Ju desculpa tive q mudar de MainActivity para TelaPrincipal por motivos de:
@@ -16,10 +14,14 @@ public class TelaPrincipal extends AppCompatActivity {
 
     Button btnlogin,confirmar;
     Spinner spn;
+    Sessao sessao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         telaMain();
+        sessao = new Sessao(getApplicationContext());
+        sessao.checkLogin();
     }
     public void telaMain(){
         setContentView(R.layout.activity_main);
@@ -43,7 +45,7 @@ public class TelaPrincipal extends AppCompatActivity {
 
     public void cadastro(){
 
-        Intent telaLogin = new Intent(this,cadastro.class);
+        Intent telaLogin = new Intent(this,Cadastro.class);
         startActivity(telaLogin);
     }
     public void loginPage(){

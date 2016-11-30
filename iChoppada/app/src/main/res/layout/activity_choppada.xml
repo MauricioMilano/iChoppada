@@ -24,4 +24,13 @@
         android:layout_height="418dp" >
     </ListView>
 
+    <Button
+        android:text="Logout"
+        android:layout_width="176dp"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content"
+        android:id="@+id/logout"
+
+        />
+
 </LinearLayout>

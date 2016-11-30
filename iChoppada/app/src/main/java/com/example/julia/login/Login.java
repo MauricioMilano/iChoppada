@@ -16,8 +16,6 @@ import com.google.firebase.auth.AuthResult;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 //TODO a porra toda
 //Aparentemente o Firebase fornece métodos de login(óbvio, tem pra criar conta
@@ -29,18 +27,20 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "EmailPassword";
-
+    Sessao sessao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        sessao = new Sessao(getApplicationContext());
         enviar = (Button) findViewById(R.id.entrar);
         email = (EditText) findViewById(R.id.emailEntLogin);
         senha = (EditText) findViewById(R.id.senhaEntLogin);
 
         mAuth = FirebaseAuth.getInstance();
-
+        if(sessao.isLoggedIn()){
+            screenChoppadas();
+        }else{
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -62,17 +62,17 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Por favor, digite o nome e a senha corretamente",
                             Toast.LENGTH_SHORT).show();
                 } else {
-                    fazerLogin(email, senha);
-
+                            fazerLogin(email, senha);
 
 
                 }
             }
-        });
+        });}
 
 
     }
-    public void fazerLogin(EditText email, EditText senha ){
+    public void fazerLogin(final EditText email, final EditText senha ){
+        sessao = new Sessao(getApplicationContext());
         mAuth.signInWithEmailAndPassword(email.getText().toString(), senha.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -84,7 +84,10 @@ public class Login extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
 
                         }else {
+                            sessao.createLoginSession(senha.getText().toString(),email.getText().toString());
                             screenChoppadas();
+                            finish();
+
                         }
 
                         // ...
@@ -109,7 +112,7 @@ public class Login extends AppCompatActivity {
         }
     }
     public void screenChoppadas(){
-        Intent choppadas = new Intent(this, mostrarChoppadas.class);
+        Intent choppadas = new Intent(this, MostrarChoppadas.class);
         startActivity(choppadas);
     }
 

@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * Created by João on 23/11/2016.
  */
-public class adicionarChoppada extends AppCompatActivity {
+public class AdicionarChoppada extends AppCompatActivity {
     DatabaseReference refDB = FirebaseDatabase.getInstance().getReference().child("choppadas");
     EditText lerNome, lerLocal;
     Button adicionar;

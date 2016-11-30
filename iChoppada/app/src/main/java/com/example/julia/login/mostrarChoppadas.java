@@ -1,33 +1,21 @@
 package com.example.julia.login;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.view.View;
 
 
-import com.firebase.client.Firebase;
-
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by João on 23/11/2016.
@@ -57,19 +45,20 @@ import java.util.Map;
 
 //Favor não alterar muito o código, caso queira.
 //EM LAB WEB ISSO ERA 4X MAIS FÁCIL
-public class mostrarChoppadas extends AppCompatActivity {
+public class MostrarChoppadas extends AppCompatActivity {
 
     private DatabaseReference refDB = FirebaseDatabase.getInstance().getReference();
     DatabaseReference choppRef = refDB;//Referencia o banco de dados
     List<Choppada> listaChopp = new ArrayList<Choppada>();
     ListView listViewChoppada;
-    Button addChopp;
+    Button addChopp,logout;
+    Sessao sessao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choppada);
-
+        sessao = new Sessao(getApplicationContext());
         //Organizei as coisas por ListView porque fica mais bonitinho
         //Mas é bem ruim de mexer em ListView
         //Considerando mudar para TextView e perder alguns décimos
@@ -87,8 +76,13 @@ public class mostrarChoppadas extends AppCompatActivity {
             }
 
         });
-
-
+        logout = (Button) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                sessao.logoutUser();
+            }
+        });
         choppRef.addValueEventListener(new ValueEventListener() {
             //Pega todas as choppadas e passa para um ArrayList
             //para o Adapter(que só funciona com Arrays obrigado Google)(só funciona leia-se não quero escrever pra HashMap)
@@ -114,7 +108,7 @@ public class mostrarChoppadas extends AppCompatActivity {
     }
     //Redireciona para a tela de adicionar choppadas.
     public void adicionarChopp(){
-        Intent intent = new Intent(this,adicionarChoppada.class);
+        Intent intent = new Intent(this,AdicionarChoppada.class);
         startActivity(intent);
     }
 

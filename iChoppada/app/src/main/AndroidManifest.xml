@@ -17,9 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".cadastro" />
-        <activity android:name=".mostrarChoppadas" />
-        <activity android:name=".adicionarChoppada" />
+        <activity android:name=".Cadastro" />
+        <activity android:name=".MostrarChoppadas" />
+        <activity android:name=".AdicionarChoppada" />
         <activity android:name=".Login"></activity>
     </application>
 
