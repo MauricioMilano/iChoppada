@@ -1,36 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_choppada">
 
-    <TextView
-        android:text="NomeUsuário"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Adicionar Choppada"
-        android:id="@+id/add_chopp"
-        android:layout_gravity="right" />
 
     <ListView
         android:id="@+id/choppada"
         android:layout_width="match_parent"
-        android:layout_height="418dp" >
+        android:layout_height="340dp"
+        android:layout_above="@+id/add_chopp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="38dp">
     </ListView>
 
     <Button
-        android:text="Logout"
-        android:layout_width="176dp"
-        android:layout_gravity="right"
+        android:id="@+id/add_chopp"
+
+        android:text="Adicionar Choppada"
+        android:typeface="sans"
+
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="NomeUsuário"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_marginTop="11dp"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/logout"
+        android:layout_alignEnd="@+id/logout" />
+
+    <Button
         android:id="@+id/logout"
 
-        />
+        android:text="Sair"
+        android:typeface="sans"
 
-</LinearLayout>
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:background="@drawable/buttonshape"
+        android:textSize="17dp"
+        android:textColor="#ffffff"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_above="@+id/choppada"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

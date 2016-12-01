@@ -1,25 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nome da Choppada"
-        android:id="@+id/nome_da_choppada" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Local da Choppada"
-        android:id="@+id/local_da_choppada" />
-
-    <Button
+    <TextView
+        android:text="Criar Choppada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar"
-        android:id="@+id/adicionar_chopp" />
+        android:id="@+id/textCriarChoppada"
+        android:fontFamily="sans"
+        android:textColor="#7A6896"
+        android:textSize="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
 
-</LinearLayout>
+    <TextView
+        android:text="Nome da Choppada:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nomeTxt"
+        android:layout_below="@+id/textCriarChoppada"
+        android:layout_alignLeft="@+id/textCriarChoppada"
+        android:layout_alignStart="@+id/textCriarChoppada"
+        android:layout_marginTop="61dp" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nome_da_choppada"
+        android:layout_below="@+id/nomeTxt"
+        android:layout_alignLeft="@+id/nomeTxt"
+        android:layout_alignStart="@+id/nomeTxt"
+        android:layout_marginTop="26dp"
+        android:layout_alignRight="@+id/textCriarChoppada"
+        android:layout_alignEnd="@+id/textCriarChoppada" />
+
+
+    <Button
+        android:id="@+id/adicionar_chopp"
+
+        android:text="Adicionar"
+        android:typeface="sans"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/local_da_choppada"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp" />
+
+    <TextView
+        android:text="Local:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/localTxt"
+        android:layout_below="@+id/nome_da_choppada"
+        android:layout_alignLeft="@+id/local_da_choppada"
+        android:layout_alignStart="@+id/local_da_choppada"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/local_da_choppada"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/localTxt"
+        android:layout_alignLeft="@+id/nome_da_choppada"
+        android:layout_alignStart="@+id/nome_da_choppada" />
+
+</RelativeLayout>

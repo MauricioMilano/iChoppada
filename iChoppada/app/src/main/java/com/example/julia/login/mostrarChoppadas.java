@@ -43,6 +43,8 @@ import java.util.List;
 //          Verso extra pq beijos
 */
 
+//
+
 //Favor não alterar muito o código, caso queira.
 //EM LAB WEB ISSO ERA 4X MAIS FÁCIL
 public class MostrarChoppadas extends AppCompatActivity {
