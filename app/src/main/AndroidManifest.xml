@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Cadastro" />
-        <activity android:name=".MostrarChoppadas" />
+        <activity android:name=".mostrarChoppadas" />
         <activity android:name=".AdicionarChoppada" />
         <activity android:name=".Login"></activity>
     </application>

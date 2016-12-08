@@ -140,7 +140,7 @@ public class Cadastro extends AppCompatActivity {
     }
     //Redireciona para a tela com todas as choppadas.
     public void screenChoppadas(){
-        Intent choppadas = new Intent(this, MostrarChoppadas.class);
+        Intent choppadas = new Intent(this, mostrarChoppadas.class);
         startActivity(choppadas);
     }
 

@@ -2,7 +2,9 @@ package com.example.julia.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ListView;
 import android.view.View;
@@ -47,28 +49,20 @@ import java.util.List;
 
 //Favor não alterar muito o código, caso queira.
 //EM LAB WEB ISSO ERA 4X MAIS FÁCIL
-public class MostrarChoppadas extends AppCompatActivity {
+public class mostrarChoppadas extends AppCompatActivity {
 
-    private DatabaseReference refDB = FirebaseDatabase.getInstance().getReference();
+    private DatabaseReference refDB = FirebaseDatabase.getInstance().getReference().child("choppadas");
     DatabaseReference choppRef = refDB;//Referencia o banco de dados
     List<Choppada> listaChopp = new ArrayList<Choppada>();
     ListView listViewChoppada;
     Button addChopp,logout;
     Sessao sessao;
+    ChoppAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choppada);
-        sessao = new Sessao(getApplicationContext());
-        //Organizei as coisas por ListView porque fica mais bonitinho
-        //Mas é bem ruim de mexer em ListView
-        //Considerando mudar para TextView e perder alguns décimos
-        listViewChoppada = (ListView) findViewById(R.id.choppada);
-
-        //Cria um Adapter para acessar e organizar os dados de listaChopp
-        ChoppAdapter adapter = new ChoppAdapter(this,listaChopp);
-        listViewChoppada.setAdapter(adapter);
 
         addChopp = (Button) findViewById(R.id.add_chopp);
         addChopp.setOnClickListener(new View.OnClickListener(){
@@ -85,6 +79,7 @@ public class MostrarChoppadas extends AppCompatActivity {
                 sessao.logoutUser();
             }
         });
+
         choppRef.addValueEventListener(new ValueEventListener() {
             //Pega todas as choppadas e passa para um ArrayList
             //para o Adapter(que só funciona com Arrays obrigado Google)(só funciona leia-se não quero escrever pra HashMap)
@@ -95,8 +90,9 @@ public class MostrarChoppadas extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot choppadaSnapshot : dataSnapshot.getChildren()) {
-                        Choppada chopp =  choppadaSnapshot.getValue(Choppada.class);
-                        listaChopp.add(choppadaSnapshot.getValue(Choppada.class));
+                        Choppada chopp = (Choppada) choppadaSnapshot.getValue(Choppada.class);
+                        listaChopp.add(chopp);
+                        Log.d("CHOPPADA",listaChopp.get(0).getNome());
 
                 }
             }
@@ -107,12 +103,20 @@ public class MostrarChoppadas extends AppCompatActivity {
 
             }
         });
+        sessao = new Sessao(getApplicationContext());
+        //Organizei as coisas por ListView porque fica mais bonitinho
+        //Mas é bem ruim de mexer em ListView
+        //Considerando mudar para TextView e perder alguns décimos
+        listViewChoppada = (ListView) findViewById(R.id.choppada);
+
+        //Cria um Adapter para acessar e organizar os dados de listaChopp
+        adapter = new ChoppAdapter(this,listaChopp);
+        listViewChoppada.setAdapter(adapter);
+
     }
     //Redireciona para a tela de adicionar choppadas.
     public void adicionarChopp(){
         Intent intent = new Intent(this,AdicionarChoppada.class);
         startActivity(intent);
     }
-
-
 }

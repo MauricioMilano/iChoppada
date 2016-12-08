@@ -13,6 +13,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.R.attr.key;
+
 /**
  * Created by João on 23/11/2016.
  */
@@ -42,20 +44,21 @@ public class AdicionarChoppada extends AppCompatActivity {
                 //Adiciona novos valores ao banco de dados, sem sobreescrever.
                 //PRECISO ACHAR UMA MANEIRA DE MOSTRAR ESSES VALORES
                 //PQ ESSA PORRA NAO FUNCIONA DEUS????!!!!!
-                /*
-                  String key = refDB.child("choppadas").push().getKey();
-                  Choppada chop = new Choppada(nome,local);
-                  Map<String, Object> choppValues = chop.toMap();
-                    Map<String, Object> updates = new HashMap<String, Object>();
-                    updates.put("/choppadas/"+key,choppValues);
-                    refDB.updateChildren(updates);
-                */
 
+
+                  Choppada chop = new Choppada(nome,local);
+                  Map<String, Object> choppValues = new HashMap<>();
+                  choppValues.put(nome,chop);
+                  refDB.updateChildren(choppValues);
+
+
+                /**
                 //Subscreve todos os dados de um nó do banco de dados com o valor passado em setValue.
                 //Mas funciona hehehehehhehehehehehehehheheheheheheehh
                 Choppada choppada = new Choppada(nome,local);
                 choppada.setNome(nome);choppada.setLocal(local);//Não sei pq eu escrevi isso mas funcionou
                 refDB.setValue(choppada);
+                */
 
                 finish();// termina a activity e desempilha
 

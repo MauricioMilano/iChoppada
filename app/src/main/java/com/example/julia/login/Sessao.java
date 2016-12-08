@@ -80,13 +80,14 @@ public class Sessao extends AppCompatActivity {
             // Staring Login Activity
             _context.startActivity(i);
         */}else{
-            Intent i  = new Intent(_context, MostrarChoppadas.class);
+            Intent i  = new Intent(_context, mostrarChoppadas.class);
             // Closing all the Activities
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
             // Add new Flag to start new Activity
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             _context.startActivity(i);
+            finish();
         }
 
     }

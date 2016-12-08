@@ -41,16 +41,20 @@ public class TelaPrincipal extends AppCompatActivity {
             }
 
         });
+
     }
 
     public void cadastro(){
 
         Intent telaLogin = new Intent(this,Cadastro.class);
         startActivity(telaLogin);
+        finish();
     }
     public void loginPage(){
         Intent feed = new Intent(this, Login.class);
         startActivity(feed);
+        finish();
     }
+
 
 }

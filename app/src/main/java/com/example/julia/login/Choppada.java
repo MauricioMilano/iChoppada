@@ -40,7 +40,7 @@ public class Choppada {
     //já que quando escreve-se nele, não se armazena mais uma Choppada, e sim Strings.
     //Dessa forma, o método adotado para mostrar as choppadas fica obsoleto, pois ele consiste em
     //pegar Choppada do Banco de Dados,e não Strings.
-    //Bom, pelo menos é isso que eu acho. Para mais informações, ver a classe MostrarChoppadas.
+    //Bom, pelo menos é isso que eu acho. Para mais informações, ver a classe mostrarChoppadas.
     public Map<String, Object> toMap(){
         HashMap<String, Object> resultado = new HashMap<>();
         resultado.put("nome",nome); resultado.put("local",local);

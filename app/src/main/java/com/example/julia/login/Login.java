@@ -40,6 +40,7 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         if(sessao.isLoggedIn()){
             screenChoppadas();
+            finish();
         }else{
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -112,8 +113,16 @@ public class Login extends AppCompatActivity {
         }
     }
     public void screenChoppadas(){
-        Intent choppadas = new Intent(this, MostrarChoppadas.class);
+        Intent choppadas = new Intent(this, mostrarChoppadas.class);
         startActivity(choppadas);
+        finish();
+    }
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        Intent inicio = new Intent(this,TelaPrincipal.class);
+        startActivity(inicio);
+
     }
 
 }
