@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">iChoppada</string>
+    <string-array name="faculdades">
+        <item>UFF</item>
+        <item>UFRJ</item>
+        <item>UFRRJ</item>
+        <item>PUC</item>
+        <item>UVA</item>
+    </string-array>
+</resources>

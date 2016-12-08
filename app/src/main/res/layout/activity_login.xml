@@ -29,8 +29,8 @@
         android:ems="10"
         android:id="@+id/emailEntLogin"
         android:layout_below="@+id/emailTxtLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_alignRight="@+id/entrar"
+        android:layout_alignEnd="@+id/entrar" />
     <TextView
         android:text="Senha:"
         android:layout_marginTop="20dp"
@@ -47,8 +47,8 @@
         android:ems="10"
         android:id="@+id/senhaEntLogin"
         android:layout_below="@+id/senhaTxtLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_alignLeft="@+id/senhaTxtLogin"
+        android:layout_alignStart="@+id/senhaTxtLogin" />
 
 
     <Button

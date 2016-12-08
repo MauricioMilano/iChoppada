@@ -36,7 +36,6 @@
         android:layout_below="@+id/nomeTxt"
         android:layout_alignLeft="@+id/nomeTxt"
         android:layout_alignStart="@+id/nomeTxt"
-        android:layout_marginTop="26dp"
         android:layout_alignRight="@+id/textCriarChoppada"
         android:layout_alignEnd="@+id/textCriarChoppada" />
 
@@ -69,9 +68,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/local_da_choppada"
-        android:layout_marginTop="12dp"
         android:layout_below="@+id/localTxt"
         android:layout_alignLeft="@+id/nome_da_choppada"
-        android:layout_alignStart="@+id/nome_da_choppada" />
+        android:layout_alignStart="@+id/nome_da_choppada"
+        android:layout_alignRight="@+id/nome_da_choppada"
+        android:layout_alignEnd="@+id/nome_da_choppada" />
 
 </RelativeLayout>
